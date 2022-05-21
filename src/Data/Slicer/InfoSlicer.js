@@ -7,8 +7,9 @@ const InfoSlicer = createSlice({
     Add: (state, action) => (state = [...state, action.payload]),
     Remove: (state, action) =>
       (state = state.filter((i) => i.id !== action.payload)),
+    Reset: (state, action) => (state = []),
   },
 })
 
-export const { Add, Remove } = InfoSlicer.actions
+export const { Add, Remove, Reset } = InfoSlicer.actions
 export default InfoSlicer.reducer

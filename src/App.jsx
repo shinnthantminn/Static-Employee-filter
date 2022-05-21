@@ -6,7 +6,7 @@ import Panel from './Components/Panel'
 const App = () => {
   const con = useFilter()
   return (
-    <main className="w-full min-h-[100vh] font-['League_Spartan'] relative">
+    <main className="w-full min-h-[100vh] bg-primary-300 font-['League_Spartan'] relative">
       <Header />
       <Panel />
       <Employee />

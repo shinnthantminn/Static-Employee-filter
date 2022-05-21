@@ -6,12 +6,12 @@ const Data = ({ data }) => {
   return (
     <div
       key={data.id}
-      className="px-10 py-10 bg-primary-300 shadow-[rgba(50,_50,_93,_0.25)_0px_13px_27px_-5px,_rgba(0,_0,_0,_0.3)_0px_8px_16px_-8px]"
+      className={data.id < 3 ? 'card border-l-[5px] rounded-l' : 'card'}
     >
       <div className="grid grid-cols-12">
-        <div className="col-span-6">
-          <div className="flex items-center space-x-7">
-            <div>
+        <div className="col-span-12 lg:col-span-6">
+          <div className="flex items-center space-x-2 sm:space-x-7 ">
+            <div className=" absolute top-0 left-0 w-[50px] translate-y-[-20px] translate-x-[15px] sm:translate-x-0 sm:translate-y-0 sm:w-fit sm:static">
               <img src={img} alt="" />
             </div>
             <div className="space-y-2">
@@ -47,8 +47,9 @@ const Data = ({ data }) => {
             </div>
           </div>
         </div>
-        <div className=" col-span-6">
-          <div className="flex justify-end items-center h-full space-x-5">
+        <div className="col-span-12 lg:col-span-6">
+          <div className="w-[95%] mx-auto border-b-[1px] border-primary-400 my-3 block lg:hidden" />
+          <div className="flex flex-wrap lg:justify-end items-center h-full sm:space-x-5">
             {data.skill.map((i, inx) => (
               <Button key={inx} item={i} />
             ))}

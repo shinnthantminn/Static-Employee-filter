@@ -3,12 +3,11 @@ import { useSelector } from 'react-redux'
 const useFilter = () => {
   const info = useSelector((state) => state.Info)
   const data = useSelector((state) => state.Data)
-
   const text = info.map((i) => i.text)
-
   const filter = data.map((i) => {
-    const con = i.skill.map((x) => text.includes(x)).some((i) => i === true)
-    if (con) {
+    const con = i.skill.map((x) => text.includes(x)).filter((z) => z === true)
+      .length
+    if (con === text.length) {
       return {
         ...i,
         filter: true,
@@ -19,7 +18,6 @@ const useFilter = () => {
       }
     }
   })
-  console.log(filter)
 
   const item = filter.filter((i) => i.filter === true)
   return item

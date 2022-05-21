@@ -7,3 +7,7 @@
 ::-webkit-scrollbar {
   display: none;
 }
+
+.card {
+  @apply relative sm:static border-primary-200 px-2 sm:px-10 py-10 bg-primary-300 shadow-[rgba(50,_50,_93,_0.25)_0px_13px_27px_-5px,_rgba(0,_0,_0,_0.3)_0px_8px_16px_-8px];
+}

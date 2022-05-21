@@ -5,7 +5,7 @@ const useImage = (fileName) => {
 
   useEffect(() => {
     const fetchImage = async () => {
-      const res = await import(`../${fileName}.svg`)
+      const res = await import(`./module-${fileName}.svg`)
       setImg(res.default)
     }
     fetchImage()
